@@ -6,62 +6,122 @@ h1 {
   font-weight: 600;
   line-height: 0.9;
   margin-top: 0;
+  color: rgba(40, 40, 40, 1);
+  margin-bottom: 0;
 }
 h2 {
   font-size: 61.92px;
   font-weight: 600;
   line-height: 0.9;
   margin-top: 0;
+  color: rgba(40, 40, 40, 1);
+  margin-bottom: 0;
+}
+h3 {
+  font-size: 29.86px;
+  font-weight: 400;
+  line-height: 0.9;
+  margin-top: 0;
+  color: rgba(40, 40, 40, 1);
+  text-align: left;
+  max-width: 506px;
+  line-height: 2.2rem;
+}
+h4 {
+  font-size: 29.86px;
+  font-weight: 400;
+  line-height: 0.9;
+  margin-top: 0;
+  color: rgba(40, 40, 40, 1);
+  text-align: left;
+  max-width: 737px;
+  line-height: 2.2rem;
+  text-decoration: none;
+}
+h5 {
+  font-size: 24.88px;
+  font-weight: 400;
+  line-height: 0.9;
+  margin-top: 0;
+  color: rgba(40, 40, 40, 1);
+  text-align: center;
+  line-height: 2.2rem;
+  text-decoration: none;
+}
+h6 {
+  font-size: 61.92px;
+  font-weight: 600;
+  line-height: 0.9;
+  margin-top: 0;
+  color: rgba(40, 40, 40, 1);
+  margin-bottom: 0;
+  padding-top: 60px;
 }
 body {
   font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
+  margin: 0;
+}
+
+p {
+  text-decoration: none;
 }
 
 /* hlavička */
 .header {
   background-color: rgba(56, 56, 56, 1);
-  padding: 5px;
-  margin-bottom: 30px;
   color: white;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .header-inner {
   max-width: 1020px;
   margin: auto;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header a {
   float: left;
   color: rgb(255, 255, 255);
   text-align: center;
-  padding: 5px;
-  font-size: 24.88px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .logo {
-  font-size: 24.88px;
+  font-size: 35.83px;
   font-weight: 900;
   text-decoration: none;
 }
 
 .header-right {
-  float: right;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .button {
   border: none;
   background-color: rgba(238, 151, 162, 1);
   color: white;
-  padding: 40px 120px;
+  padding: 40px 20px;
   text-align: center;
   display: inline-block;
   font-size: 14.4px;
   cursor: pointer;
   border-radius: 50px;
   text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: rgb(211, 124, 136);
+  color: white;
 }
 
 @media screen and (max-width: 500px) {
@@ -88,6 +148,7 @@ body {
   grid-template-areas: "about about skill" "contact portfolio portfolio";
   gap: 30px;
   margin-bottom: 5rem;
+  padding-top: 90px;
 }
 
 .box {
@@ -97,6 +158,7 @@ body {
   font-size: 61.92px;
   font-weight: 600;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .about {
@@ -115,13 +177,45 @@ body {
   grid-area: portfolio;
 }
 
+a.box.about {
+  transition-duration: 0.4s;
+}
+
+a.box.about:hover {
+  background-color: rgb(233, 222, 188);
+}
+
+a.box.skills {
+  transition-duration: 0.4s;
+}
+
+a.box.skills:hover {
+  background-color: rgb(233, 222, 188);
+}
+
+a.box.contact {
+  transition-duration: 0.4s;
+}
+
+a.box.contact:hover {
+  background-color: rgb(233, 222, 188);
+}
+
+a.box.portfolio {
+  transition-duration: 0.4s;
+}
+
+a.box.portfolio:hover {
+  background-color: rgb(233, 222, 188);
+}
 /* sekce */
 .sekce_aboutme {
   max-width: 1020px;
   margin: 0 auto;
   background-color: rgba(240, 231, 206, 1);
   border-radius: 30px;
-  padding: 30px;
+  padding: 60px;
+  padding-top: 0;
   font-size: 61.92px;
   font-weight: 600;
   margin-bottom: 5rem;
@@ -131,28 +225,117 @@ body {
   margin: 0 auto;
   background-color: rgba(240, 231, 206, 1);
   border-radius: 30px;
-  padding: 30px;
+  padding: 60px;
+  padding-right: 0;
+  padding-top: 0;
   font-size: 61.92px;
   font-weight: 600;
   margin-bottom: 5rem;
+  overflow: hidden;
 }
 .sekce_contact {
   max-width: 1020px;
   margin: 0 auto;
   background-color: rgba(240, 231, 206, 1);
   border-radius: 30px;
-  padding: 30px;
+  padding: 0px;
+  padding-left: 60px;
   font-size: 61.92px;
   font-weight: 600;
   margin-bottom: 5rem;
+  overflow: hidden;
 }
 .sekce_portfolio {
   max-width: 1020px;
   margin: 0 auto;
   background-color: rgba(240, 231, 206, 1);
   border-radius: 30px;
-  padding: 30px;
+  padding: 60px;
+  padding-top: 0;
   font-size: 61.92px;
   font-weight: 600;
   margin-bottom: 5rem;
+  overflow: hidden;
+}
+
+.top {
+  --icon-size: 3rem;
+
+  font-size: 35.83px;
+  font-weight: 900;
+  text-decoration: none;
+  padding-left: 0px;
+  color: #d6d0dd;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: white;
+  border-radius: 100%;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border: 0.3rem solid #d6d0dd;
+}
+
+.top img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  border-radius: 100%;
+}
+
+.text_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  padding-top: 60px;
+}
+
+.text2_item2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item2 {
+  padding: 0;
+}
+
+.text3_item3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.item3 {
+  align-self: flex-end;
+  height: 358px;
+}
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 76px;
+}
+
+footer {
+  max-width: 500;
+  margin: auto;
+  text-decoration: none;
+}
+
+a.Email {
+  text-decoration: none;
+  color: rgba(56, 56, 56, 1);
+}
+
+a.Phone {
+  text-decoration: none;
+  color: rgba(56, 56, 56, 1);
 }
