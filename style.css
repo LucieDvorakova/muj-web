@@ -1,70 +1,22 @@
 html {
   scroll-behavior: smooth;
 }
-h1 {
-  font-size: 61.92px;
-  font-weight: 600;
-  line-height: 0.9;
-  margin-top: 0;
-  color: rgba(40, 40, 40, 1);
-  margin-bottom: 0;
-}
+
+h1,
 h2 {
+  margin: 0;
+  padding: 0;
   font-size: 61.92px;
   font-weight: 600;
   line-height: 0.9;
-  margin-top: 0;
   color: rgba(40, 40, 40, 1);
-  margin-bottom: 0;
 }
-h3 {
-  font-size: 29.86px;
-  font-weight: 400;
-  line-height: 0.9;
-  margin-top: 0;
-  color: rgba(40, 40, 40, 1);
-  text-align: left;
-  max-width: 506px;
-  line-height: 2.2rem;
-}
-h4 {
-  font-size: 29.86px;
-  font-weight: 400;
-  line-height: 0.9;
-  margin-top: 0;
-  color: rgba(40, 40, 40, 1);
-  text-align: left;
-  max-width: 737px;
-  line-height: 2.2rem;
-  text-decoration: none;
-}
-h5 {
-  font-size: 24.88px;
-  font-weight: 400;
-  line-height: 0.9;
-  margin-top: 0;
-  color: rgba(40, 40, 40, 1);
-  text-align: center;
-  line-height: 2.2rem;
-  text-decoration: none;
-}
-h6 {
-  font-size: 61.92px;
-  font-weight: 600;
-  line-height: 0.9;
-  margin-top: 0;
-  color: rgba(40, 40, 40, 1);
-  margin-bottom: 0;
-  padding-top: 60px;
-}
+
 body {
   font-family: "Urbanist", sans-serif;
   font-optical-sizing: auto;
   margin: 0;
-}
-
-p {
-  text-decoration: none;
+  font-size: 29.86px;
 }
 
 /* hlavička */
@@ -75,6 +27,7 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header-inner {
@@ -159,6 +112,33 @@ p {
   font-weight: 600;
   text-decoration: none;
   overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.box img {
+  position: relative;
+  transition: all 0.225s ease 0s;
+}
+
+.box:hover {
+  background-color: rgb(233, 222, 188);
+}
+
+.box:hover img {
+  /* proměnné vznikají ve script.js */
+  transform: translate(
+    calc(var(--mouse-x) * 0.01),
+    calc(var(--mouse-y) * 0.01)
+  );
+}
+
+.box .nadpis {
+  font-size: 61.92px;
+  font-weight: 600;
+  line-height: 0.9;
+  margin-top: 0;
+  color: rgba(40, 40, 40, 1);
+  margin-bottom: 0;
 }
 
 .about {
@@ -177,85 +157,32 @@ p {
   grid-area: portfolio;
 }
 
-a.box.about {
-  transition-duration: 0.4s;
-}
-
-a.box.about:hover {
-  background-color: rgb(233, 222, 188);
-}
-
-a.box.skills {
-  transition-duration: 0.4s;
-}
-
-a.box.skills:hover {
-  background-color: rgb(233, 222, 188);
-}
-
-a.box.contact {
-  transition-duration: 0.4s;
-}
-
-a.box.contact:hover {
-  background-color: rgb(233, 222, 188);
-}
-
-a.box.portfolio {
-  transition-duration: 0.4s;
-}
-
-a.box.portfolio:hover {
-  background-color: rgb(233, 222, 188);
-}
 /* sekce */
-.sekce_aboutme {
+.sekce {
   max-width: 1020px;
   margin: 0 auto;
   background-color: rgba(240, 231, 206, 1);
   border-radius: 30px;
   padding: 60px;
-  padding-top: 0;
-  font-size: 61.92px;
-  font-weight: 600;
   margin-bottom: 5rem;
+  overflow: hidden;
 }
+
 .sekce_skills {
-  max-width: 1020px;
-  margin: 0 auto;
-  background-color: rgba(240, 231, 206, 1);
-  border-radius: 30px;
-  padding: 60px;
   padding-right: 0;
   padding-top: 0;
-  font-size: 61.92px;
-  font-weight: 600;
-  margin-bottom: 5rem;
-  overflow: hidden;
 }
+.sekce_skills h2 {
+  padding-top: 60px;
+}
+
 .sekce_contact {
-  max-width: 1020px;
-  margin: 0 auto;
-  background-color: rgba(240, 231, 206, 1);
-  border-radius: 30px;
   padding: 0px;
   padding-left: 60px;
-  font-size: 61.92px;
-  font-weight: 600;
-  margin-bottom: 5rem;
-  overflow: hidden;
 }
-.sekce_portfolio {
-  max-width: 1020px;
-  margin: 0 auto;
-  background-color: rgba(240, 231, 206, 1);
-  border-radius: 30px;
-  padding: 60px;
-  padding-top: 0;
-  font-size: 61.92px;
-  font-weight: 600;
-  margin-bottom: 5rem;
-  overflow: hidden;
+
+.sekce_contact h2 {
+  padding-top: 60px;
 }
 
 .top {
@@ -311,10 +238,18 @@ a.box.portfolio:hover {
   height: 358px;
 }
 
+.sekce_skills .item2 {
+  margin-bottom: -2rem;
+}
+
 .tools {
-  display: flex;
-  justify-content: space-between;
-  gap: 100px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto auto auto;
+}
+
+.tools ul {
+  margin: 0;
 }
 
 .content {
@@ -326,16 +261,41 @@ a.box.portfolio:hover {
 
 footer {
   max-width: 500;
-  margin: auto;
+  margin: 4rem auto;
   text-decoration: none;
 }
 
-a.Email {
-  text-decoration: none;
-  color: rgba(56, 56, 56, 1);
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 24.88px;
+  font-weight: 400;
+  line-height: 2.2rem;
 }
 
+a.Email,
 a.Phone {
   text-decoration: none;
   color: rgba(56, 56, 56, 1);
+  padding: 1rem 2rem;
+  border-radius: 60px;
+  transition: all 0.4s ease;
+}
+
+a.Email:hover,
+a.Phone:hover {
+  background-color: rgba(238, 151, 162, 1);
+}
+
+#contact a.Email,
+#contact a.Phone {
+  margin-left: -2rem;
+}
+
+#contact a.Email,
+#contact a.Phone {
+  background-color: transparent;
 }
